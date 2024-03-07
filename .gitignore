@@ -1,0 +1,10 @@
+nvim/.config/nvim/plugin
+nvim/.config/nvim/# custom
+nvim/.config/nvim/spell
+nvim/.config/nvim/ftplugin
+nvim/.config/nvim/syntax
+nvim/.config/nvim/coc-settings.json
+nvim/.config/nvim/.luarc.json
+nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/after
+nvim/.config/nvim/**/.DS_Store
