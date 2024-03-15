@@ -88,4 +88,16 @@ M.gitsigns = {
   },
 }
 
+M.general = {
+  n = {
+    -- ...
+    ["<leader>tt"] = {
+      function()
+        require("base46").toggle_transparency()
+      end,
+      "Toggle transparency",
+    },
+  },
+}
+
 return M
