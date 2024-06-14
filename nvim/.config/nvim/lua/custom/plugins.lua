@@ -87,21 +87,13 @@ local plugins = {
   },
   {
     "github/copilot.vim",
-    lazy = false,
-  },
-  {
-    {
-      "folke/zen-mode.nvim",
-      dependencies = "folke/twilight.nvim",
-      lazy = false,
-      opts = {},
-    },
+    event = "LspAttach",
   },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
-    lazy = false,
+    event = "LspAttach",
   },
   {
     "folke/trouble.nvim",
@@ -143,11 +135,11 @@ local plugins = {
   },
   {
     "tpope/vim-fugitive",
-    lazy = false,
+    event = "BufRead",
   },
   {
     "RRethy/vim-illuminate",
-    lazy = false,
+    event = "LspAttach",
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
@@ -175,7 +167,7 @@ local plugins = {
   },
   {
     "jiaoshijie/undotree",
-    lazy = false,
+    event = "BufRead",
     dependencies = "nvim-lua/plenary.nvim",
     config = true,
     keys = { -- load the plugin only when using it's keybinding:
@@ -184,13 +176,12 @@ local plugins = {
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
-    lazy = false,
-    enabled = true,
+    event = "LspAttach",
     opts = { mode = "cursor", max_lines = 3, line_numbers = true },
   },
   {
     "kelly-lin/ranger.nvim",
-    lazy = false,
+    event = "BufRead",
     config = function()
       require("ranger-nvim").setup { replace_netrw = true }
     end,
@@ -201,6 +192,15 @@ local plugins = {
     dependencies = { "neovim/nvim-lspconfig" },
     config = function()
       require("inlay-hints").setup()
+    end,
+  },
+  {
+    "dstein64/vim-startuptime",
+    -- lazy-load on a command
+    cmd = "StartupTime",
+    -- init is called during startup. Configuration for vim plugins typically should be set in an init function
+    init = function()
+      vim.g.startuptime_tries = 10
     end,
   },
 }
