@@ -200,12 +200,14 @@ local plugins = {
     lazy = false,
     config = function()
       require("ranger-nvim").setup { replace_netrw = true }
-      -- vim.api.nvim_set_keymap("n", "<leader>ef", "", {
-      --   noremap = true,
-      --   callback = function()
-      --     require("ranger-nvim").open(true)
-      --   end,
-      -- })
+    end,
+  },
+  {
+    "MysticalDevil/inlay-hints.nvim",
+    event = "LspAttach",
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+      require("inlay-hints").setup()
     end,
   },
 }

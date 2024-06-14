@@ -5,7 +5,6 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
 lspconfig.gopls.setup {
-  inlay_hints = { show_parameter_hints = true, parameter_hints_prefix = "=>" },
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = { "gopls" },
@@ -20,13 +19,13 @@ lspconfig.gopls.setup {
       },
       staticcheck = true,
       hints = {
+        rangeVariableTypes = true,
+        parameterNames = true,
+        constantValues = true,
         assignVariableTypes = true,
         compositeLiteralFields = true,
         compositeLiteralTypes = true,
-        constantValues = true,
         functionTypeParameters = true,
-        parameterNames = true,
-        rangeVariableTypes = true,
       },
     },
   },
