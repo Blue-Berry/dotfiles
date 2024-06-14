@@ -1,12 +1,5 @@
 local plugins = {
   {
-    "tjdevries/ocaml.nvim",
-    ft = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
-    config = function()
-      require("ocaml").setup()
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = { enabled = true },

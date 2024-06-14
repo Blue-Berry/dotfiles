@@ -56,7 +56,6 @@ M.refresh_virtlines = function()
       local prefix = string.rep(" ", lens.range.start.character)
       local text = prefix .. title
 
-      vim.api.nvim_set_hl(0, "VirtNonText", { fg = "#8f6abe", italic = true })
       -- NOTE: this can be "Comment" or "VirtNonText"
       local lines = { { { text, "VirtNonText" } } }
       if string.len(text) > 100 then

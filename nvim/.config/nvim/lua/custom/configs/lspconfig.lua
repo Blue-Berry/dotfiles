@@ -72,6 +72,11 @@ lspconfig.ocamllsp.setup {
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "CursorHold" }, {
       group = codelens,
       callback = function()
+        -- set the highlight for the code lens and inlay hints
+        -- :h treesitter-highlight-groups
+        -- vim.api.nvim_set_hl(0, "Comment", { link = "@type", italic = true }) -- inlay hints
+        -- vim.api.nvim_set_hl(0, "VirtNonText", { link = "@attribute" }) -- code lens
+        vim.api.nvim_set_hl(0, "VirtNonText", { fg = "#8f6abe", italic = true }) -- code lens
         -- vim.lsp.codelens.refresh()
         require("custom.configs.codelens").refresh_virtlines()
       end,
