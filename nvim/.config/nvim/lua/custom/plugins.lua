@@ -34,8 +34,6 @@ local plugins = {
         "black",
         "prettier",
         "lua-language-server",
-        "ocaml-lsp",
-        "ocamlformat",
         "bash-language-server",
         "clangd",
       },
@@ -184,11 +182,31 @@ local plugins = {
   },
   {
     "jiaoshijie/undotree",
+    lazy = false,
     dependencies = "nvim-lua/plenary.nvim",
     config = true,
     keys = { -- load the plugin only when using it's keybinding:
       { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+    enabled = true,
+    opts = { mode = "cursor", max_lines = 3, line_numbers = true },
+  },
+  {
+    "kelly-lin/ranger.nvim",
+    lazy = false,
+    config = function()
+      require("ranger-nvim").setup { replace_netrw = true }
+      -- vim.api.nvim_set_keymap("n", "<leader>ef", "", {
+      --   noremap = true,
+      --   callback = function()
+      --     require("ranger-nvim").open(true)
+      --   end,
+      -- })
+    end,
   },
 }
 return plugins

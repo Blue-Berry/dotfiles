@@ -87,8 +87,10 @@ lspconfig.ocamllsp.setup {
     )
   end,
   settings = {
+    inlayHints = { enable = true },
     codelens = { enable = true },
   },
+
   capabilities = capabilities,
   cmd = { "ocamllsp" },
   filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
@@ -112,3 +114,5 @@ lspconfig.clangd.setup {
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_dir = util.root_pattern(".git", "compile_commands.json", "compile_flags.txt", ".clangd"),
 }
+
+lspconfig.gleam.setup {}

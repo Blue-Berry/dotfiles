@@ -100,4 +100,15 @@ M.general = {
   },
 }
 
+M.ranger = {
+  n = {
+    ["<leader>ef"] = {
+      function()
+        require("ranger-nvim").open(true)
+      end,
+      "Open ranger",
+    },
+  },
+}
+
 return M

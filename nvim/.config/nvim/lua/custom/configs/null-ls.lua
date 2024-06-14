@@ -7,11 +7,9 @@ local sources = {
   formatting.prettier,
   formatting.stylua,
   formatting.black,
-  formatting.rustfmt,
+  -- formatting.rustfmt,
   formatting.gofmt,
   formatting.ocamlformat,
-
-  lint.shellcheck,
 }
 
 null_ls.setup {
