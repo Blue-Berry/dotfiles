@@ -120,3 +120,7 @@ lspconfig.clangd.setup {
 }
 
 lspconfig.gleam.setup {}
+
+lspconfig.bashls.setup {}
+
+lspconfig.nixd.setup {}
