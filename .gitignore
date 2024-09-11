@@ -8,3 +8,4 @@ nvim/.config/nvim/.luarc.json
 nvim/.config/nvim/lazy-lock.json
 nvim/.config/nvim/after
 nvim/.config/nvim/**/.DS_Store
+nvim/.config/nvim/.direnv

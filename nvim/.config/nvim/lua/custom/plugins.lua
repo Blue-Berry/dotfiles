@@ -99,6 +99,7 @@ local plugins = {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
+    lazy = false,
   },
   {
     "kevinhwang91/nvim-ufo",
@@ -202,6 +203,24 @@ local plugins = {
     init = function()
       vim.g.startuptime_tries = 10
     end,
+  },
+  {
+    "nmac427/guess-indent.nvim",
+    lazy = false,
+    config = function()
+      require("guess-indent").setup {}
+    end,
+  },
+  {
+    "amitds1997/remote-nvim.nvim",
+    version = "*", -- Pin to GitHub releases
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- For standard functions
+      "MunifTanjim/nui.nvim", -- To build the plugin UI
+      "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
+    },
+    config = true,
+    lazy = false,
   },
 }
 return plugins

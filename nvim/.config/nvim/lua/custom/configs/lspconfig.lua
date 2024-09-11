@@ -124,3 +124,5 @@ lspconfig.gleam.setup {}
 lspconfig.bashls.setup {}
 
 lspconfig.nixd.setup {}
+
+lspconfig.nginx_language_server.setup {}
