@@ -61,7 +61,3 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 })
-
-if vim.g.neovide then
-  vim.g.neovide_scale_factor = 0.7
-end

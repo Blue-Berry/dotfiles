@@ -181,6 +181,13 @@ local plugins = {
     opts = { mode = "cursor", max_lines = 3, line_numbers = true },
   },
   {
+    "kelly-lin/ranger.nvim",
+    event = "BufRead",
+    config = function()
+      require("ranger-nvim").setup { replace_netrw = true }
+    end,
+  },
+  {
     "MysticalDevil/inlay-hints.nvim",
     event = "LspAttach",
     dependencies = { "neovim/nvim-lspconfig" },
@@ -215,66 +222,5 @@ local plugins = {
     config = true,
     lazy = false,
   },
-  {
-    "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
-    keys = {
-      -- 👇 in this section, choose your own keymappings!
-      {
-        "<leader>-",
-        "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
-      },
-      {
-        -- Open in the current working directory
-        "<leader>cw",
-        "<cmd>Yazi cwd<cr>",
-        desc = "Open the file manager in nvim's working directory",
-      },
-      {
-        -- NOTE: this requires a version of yazi that includes
-        -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-        "<c-up>",
-        "<cmd>Yazi toggle<cr>",
-        desc = "Resume the last yazi session",
-      },
-    },
-    opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = true,
-      keymaps = {
-        show_help = "<f1>",
-      },
-    },
-  },
-  {
-    "kdheepak/lazygit.nvim",
-    lazy = true,
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitCurrentFile",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-    },
-  },
-  {
-    "ggandor/leap.nvim",
-    lazy = false,
-    config = function()
-      require("leap").create_default_mappings()
-    end,
-  },
-
-  { "akinsho/git-conflict.nvim", version = "*", config = true, lazy = false },
 }
 return plugins

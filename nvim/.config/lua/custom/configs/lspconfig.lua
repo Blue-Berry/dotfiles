@@ -31,8 +31,6 @@ lspconfig.gopls.setup {
   },
 }
 
-lspconfig.golangci_lint_ls.setup {}
-
 lspconfig.pylsp.setup {
   on_attach = on_attach,
   capabilities = capabilities,
