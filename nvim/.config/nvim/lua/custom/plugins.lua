@@ -276,5 +276,19 @@ local plugins = {
   },
 
   { "akinsho/git-conflict.nvim", version = "*", config = true, lazy = false },
+    {
+      "supermaven-inc/supermaven-nvim",
+    event = "LspAttach",
+          keymaps = {
+    accept_suggestion = "<Tab>",
+    clear_suggestion = "<C-]>",
+    accept_word = "<C-j>",
+            disable_inline_completion = true, -- disables inline completion for use with cmp
+            disable_keymaps = false, -- disables built in keymaps for more manual control
+  },
+      config = function()
+        require("supermaven-nvim").setup({})
+      end,
+    },
 }
 return plugins

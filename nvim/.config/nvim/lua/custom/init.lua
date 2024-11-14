@@ -63,5 +63,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 if vim.g.neovide then
-  vim.g.neovide_scale_factor = 0.7
+    vim.o.guifont = "FiraCode Nerd Font:h12"
+    vim.g.neovide_scale_factor = 0.8
 end
